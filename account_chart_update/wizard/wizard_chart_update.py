@@ -338,8 +338,8 @@ class WizardUpdateChartsAccounts(models.TransientModel):
         result = []
         for tpl in templates:
             pos_id = self.find_fp_by_templates(tpl.position_id).id
-            src_id = self.find_tax_by_templates(tpl.account_src_id).id
-            dest_id = self.find_tax_by_templates(tpl.account_dest_id).id
+            src_id = self.find_tax_by_templates(tpl.tax_src_id).id
+            dest_id = self.find_tax_by_templates(tpl.tax_dest_id).id
             mapping = self.env["account.fiscal.position.tax"].search([
                 ("position_id", "=", pos_id),
                 ("tax_src_id", "=", src_id),
