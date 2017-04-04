@@ -422,7 +422,7 @@ class WizardUpdateChartsAccounts(models.TransientModel):
                     if t:
                         find = getattr(
                             self,
-                            "find_{}{}_by_templates".format(
+                            "find_%s%s_by_templates" % (
                                 "fp_" if ".fiscal.position" in relation
                                 else "",
                                 t))
