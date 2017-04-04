@@ -290,7 +290,7 @@ class WizardUpdateChartsAccounts(models.TransientModel):
     @tools.ormcache("code")
     def padded_code(self, code):
         """Return a right-zero-padded code with the chosen digits."""
-        return "{:0<{}}".format(code, self.code_digits)
+        return code.ljust(self.code_digits, '0')
 
     @api.multi
     @tools.ormcache("templates")
